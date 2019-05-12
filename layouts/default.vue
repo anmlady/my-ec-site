@@ -9,9 +9,19 @@
         <nuxt-link to="/"
           ><span style="color: #FFF; margin-right: 10px">Home</span></nuxt-link
         >
-        <nuxt-link to="/login"
-          ><span style="color: #FFF">Login</span></nuxt-link
-        >
+        <p v-if="isAuthenticated">Hi, {{ user.email }}</p>
+        <div v-else>
+          <nuxt-link to="/login"
+            ><span style="color: #FFF; margin-right: 10px"
+              >Login</span
+            ></nuxt-link
+          >
+          <nuxt-link to="/signup"
+            ><span style="color: #FFF; margin-right: 10px"
+              >Signup</span
+            ></nuxt-link
+          >
+        </div>
         <div class="navbar-burger">
           <span />
           <span />
@@ -29,6 +39,8 @@
 </template>
 
 <script>
+import { mapState, mapGetters } from 'vuex'
+
 export default {
   data() {
     return {
@@ -45,6 +57,11 @@ export default {
         }
       ]
     }
+  },
+
+  computed: {
+    ...mapState(['user']),
+    ...mapGetters(['isAuthenticated'])
   }
 }
 </script>
