@@ -1,23 +1,30 @@
 <template>
-  <div>
-    <div class="colums">
-      <div class="column">
-        <img :src="item.img" style="height: 400px" />
-      </div>
-      <div class="column">
-        <p>{{ item.name }}</p>
-        <p>{{ item.description }}</p>
-        <p>{{ item.price }}</p>
-        <p>{{ item.inventory }}</p>
+  <IsAuthentication>
+    <div>
+      <div class="colums">
+        <div class="column">
+          <img :src="item.img" style="height: 400px" />
+        </div>
+        <div class="column">
+          <p>{{ item.name }}</p>
+          <p>{{ item.description }}</p>
+          <p>{{ item.price }}</p>
+          <p>{{ item.inventory }}</p>
+        </div>
       </div>
     </div>
-  </div>
+  </IsAuthentication>
 </template>
 
 <script>
 import fb from '~/plugins/firebase'
+import IsAuthentication from '~/components/IsAuthentication'
 
 export default {
+  components: {
+    IsAuthentication
+  },
+
   data() {
     return {
       item: {

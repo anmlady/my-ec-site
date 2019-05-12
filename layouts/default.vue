@@ -6,8 +6,12 @@
       aria-label="main navigation"
     >
       <div class="navbar-brand">
-        <nuxt-link to="/"><span>Home</span></nuxt-link>
-        <span>Login</span>
+        <nuxt-link to="/"
+          ><span style="color: #FFF; margin-right: 10px">Home</span></nuxt-link
+        >
+        <nuxt-link to="/login"
+          ><span style="color: #FFF">Login</span></nuxt-link
+        >
         <div class="navbar-burger">
           <span />
           <span />
