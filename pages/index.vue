@@ -1,5 +1,7 @@
 <template>
   <section class="section">
+    <FirstView />
+
     <div class="columns is-mobile">
       <card title="Free" icon="github-circle">
         Open source on <a href="https://github.com/buefy/buefy"> GitHub</a>
@@ -22,13 +24,13 @@
 </template>
 
 <script>
-import Card from '~/components/Card'
+import FirstView from '~/components/FirstView'
 
 export default {
-  name: 'HomePage',
+  name: 'Home',
 
   components: {
-    Card
+    FirstView
   }
 }
 </script>

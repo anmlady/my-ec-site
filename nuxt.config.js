@@ -1,5 +1,16 @@
 import pkg from './package'
 
+require('dotenv').config()
+const {
+  FB_API_KEY,
+  FB_AUTH_DOMAIN,
+  FB_DB_URL,
+  FB_PJ_ID,
+  FB_STORAGE_BUCKET,
+  FB_MESSAGING_SENDER_ID,
+  FB_APP_ID
+} = process.env
+
 export default {
   mode: 'universal',
 
@@ -69,5 +80,15 @@ export default {
         })
       }
     }
+  },
+
+  env: {
+    FB_API_KEY,
+    FB_AUTH_DOMAIN,
+    FB_DB_URL,
+    FB_PJ_ID,
+    FB_STORAGE_BUCKET,
+    FB_MESSAGING_SENDER_ID,
+    FB_APP_ID
   }
 }
